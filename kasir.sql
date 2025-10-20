@@ -19,7 +19,8 @@ CREATE TABLE barang (
   kode_barang VARCHAR(50) NOT NULL UNIQUE,
   nama_barang VARCHAR(255) NOT NULL,
   harga DECIMAL(12,2) NOT NULL DEFAULT 0,
-  stok INT NOT NULL DEFAULT 0
+  stok INT NOT NULL DEFAULT 0,
+  is_active TINYINT(1) NOT NULL DEFAULT 1
 );
 
 CREATE TABLE transaksi (
@@ -51,7 +52,7 @@ INSERT INTO users (username,password,role) VALUES
 ('admin','admin123','admin'),
 ('kasir1','kasir123','kasir');
 
-INSERT INTO barang (kode_barang,nama_barang,harga,stok) VALUES
-('B001','Pulpen',1500.00,100),
-('B002','Buku Tulis',5000.00,50),
-('B003','Penghapus',1000.00,200);
+INSERT INTO barang (kode_barang,nama_barang,harga,stok,is_active) VALUES
+('B001','Pulpen',1500.00,100,1),
+('B002','Buku Tulis',5000.00,50,1),
+('B003','Penghapus',1000.00,200,1);

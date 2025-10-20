@@ -66,27 +66,34 @@ table {
     font-size:14px;
 }
 th, td {
-    border:1px solid #f0f0f0;
-    padding:10px 12px;
-    text-align:left;
+    border:1px solid #000;
+    padding:8px 10px;
 }
 th { background:#facc15; color:#000; }
 tr:nth-child(even) td { background:#fffbe6; }
 .total-row td { background:#fef3c7; font-weight:700; }
 .right { text-align:right; }
 .center { text-align:center; }
+
+/* Tombol disamakan dengan laporan_cetak.php */
 .btn {
-    display:inline-block;
-    background:#facc15;
-    color:#000;
-    font-weight:700;
-    padding:8px 16px;
-    border-radius:6px;
-    text-decoration:none;
-    cursor:pointer;
-    transition:0.2s;
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  background: #facc15;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  text-decoration: none;
 }
-.btn:hover { background:#eab308; }
+.btn:hover {
+  background: #eab308;
+  transform: translateY(-1px);
+}
 .no-print { text-align:center; margin-bottom:16px; }
 @media print { .no-print { display:none; } }
 </style>
@@ -98,7 +105,7 @@ tr:nth-child(even) td { background:#fffbe6; }
   Periode: <?= $start ? htmlspecialchars($start) : '-' ?> s/d <?= $end ? htmlspecialchars($end) : '-' ?>
 </div>
 
-<div class="no-print">
+<div class="no-print" style="margin-bottom:20px; text-align:center;">
   <button class="btn" onclick="window.print()">Cetak</button>
   <a href="/kasir/kasir/riwayat.php" class="btn">Kembali</a>
 </div>
